@@ -12,3 +12,8 @@ root.render(
     <App />
   </React.StrictMode>
 );
+
+
+/*
+  npx create-react-app react-library --template typescript
+*/
