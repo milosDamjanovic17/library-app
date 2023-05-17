@@ -11,7 +11,7 @@ function ReturnBook() {
           alt="book"
         />
         <h6 className="mt-2">Book</h6>
-        <p>MDM</p>
+        <p>MDL</p>
         <a className="btn main-color text-white" href="#">
           Reserve!
         </a>

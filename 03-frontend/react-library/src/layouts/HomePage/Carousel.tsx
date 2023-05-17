@@ -3,13 +3,14 @@ import CarouselMobileView from "./CarouselMobileView";
 
 function Carousel() {
   return (
-    <div className="container m-5" style={{ height: 550 }}>
+    <div className="container mt-5" style={{ height: 550 }}>
       <div className="homepage-carousel-title">
         <h3>Find your next favourite book here!</h3>
       </div>
       <div
         id="carouselExampleControls"
-        className="carousel carousel-dark slide mt-5 d-none d-lg-block"
+        className="carousel carousel-dark slide mt-5 
+        d-none d-lg-block"
         data-bs-interval="false"
       >
          {/* Desktop View */}
