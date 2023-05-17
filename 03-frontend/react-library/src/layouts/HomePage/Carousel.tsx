@@ -3,6 +3,7 @@ import CarouselMobileView from "./CarouselMobileView";
 
 function Carousel() {
   return (
+        /*Wrapping container styling */
     <div className="container mt-5" style={{ height: 550 }}>
       <div className="homepage-carousel-title">
         <h3>Find your next favourite book here!</h3>
