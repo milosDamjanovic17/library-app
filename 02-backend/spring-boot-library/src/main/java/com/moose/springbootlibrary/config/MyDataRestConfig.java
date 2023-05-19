@@ -10,7 +10,7 @@ import org.springframework.web.servlet.config.annotation.CorsRegistry;
 @Configuration
 public class MyDataRestConfig implements RepositoryRestConfigurer {
 
-    private String theAllowedOrigins = "http://localhost:3000";
+    private String theAllowedOrigins = "http://localhost:3000"; // make sure that we can send requests to our frontend path
 
     @Override
     public void configureRepositoryRestConfiguration(RepositoryRestConfiguration config, CorsRegistry cors) {
@@ -23,7 +23,7 @@ public class MyDataRestConfig implements RepositoryRestConfigurer {
                 HttpMethod.PUT
         };
 
-        config.exposeIdsFor(Book.class); // expose all /books/{id} entities
+        config.exposeIdsFor(Book.class); // expose PK for all /books/{id} entities
         
         disableHttpMethods(Book.class, config, theUnsupportedActions); // custom method where we implement HTTP methods we want to disable for Book entity
 
@@ -32,7 +32,9 @@ public class MyDataRestConfig implements RepositoryRestConfigurer {
                 .allowedOrigins(theAllowedOrigins);
     }
 
-    private void disableHttpMethods(Class<Book> bookClass, RepositoryRestConfiguration config, HttpMethod[] theUnsupportedActions) {
+    private void disableHttpMethods(Class<Book> bookClass,
+                                    RepositoryRestConfiguration config,
+                                    HttpMethod[] theUnsupportedActions) {
 
         config.getExposureConfiguration()
                 .forDomainType(bookClass)
@@ -43,7 +45,7 @@ public class MyDataRestConfig implements RepositoryRestConfigurer {
     }
 
     /*
-    * disable the option for POST, PUT, DELETE, PATCH request calls for path /books
+    * make the book entity read-only, disable the option for POST, PUT, DELETE, PATCH http request calls for path /books
     * */
 
 }
